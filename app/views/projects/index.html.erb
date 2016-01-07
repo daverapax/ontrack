@@ -1,1 +1,26 @@
-<h3>moinsen</h3>
+<h3>Projekte</h3>
+
+<p><%= link_to "Neues Projekt anlegen", new_project_path %></p>
+
+<table>
+	<tr>
+		<th>Titel</th>
+		<th>Beschreibung</th>
+		<th>Datum</th>
+		<th>Edit</th>
+		<th>Show</th>
+		<th>Löschen</th>
+	</tr>
+	
+	<% @projects.each do |p| %>
+		<tr>
+			<td><%= p.title %></td>
+			<td><%= p.description %></td>
+			<td><%= p.start_date %></td>
+			<td><%= link_to "Edit", edit_project_path(p.id) %></td>
+			<td><%= link_to "Show", project_path(p.id) %></td>
+			<td><%= link_to "Delete", project_path(p.id), method: :delete, data: {confirm: "Sicher???"} %></td>
+		</tr>
+	<% end %>
+	
+</table>

@@ -1,0 +1,35 @@
+<h3>Project: <%= @project.title %></h3>
+
+
+<% if flash[:notice] %>
+<div class="flash">
+		<%= flash[:notice] %>
+</div>
+	<% else %>
+	<div></div>
+	<% end %>
+
+<div class="row">
+		<div class="medium-2 columns">
+			<p>Beschreibung:</p>
+		</div>
+		<div class="medium-10 columns">
+			<p><%= @project.description %></p>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+		<div class="medium-2 columns">
+			<p>Startdatum:</p>
+		</div>
+		<div class="medium-10 columns">
+			<p><%= @project.start_date %></p>
+		</div>
+	</div>
+</div>
+
+<p><%= link_to "Tasks", project_tasks_path(@project.id) %></p>
+ 
+
+<p><%= link_to "Übersicht", projects_path %></p>
