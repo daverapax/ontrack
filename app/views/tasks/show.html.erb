@@ -27,5 +27,5 @@
 
 
 
-<%#= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', project_tasks_path %>
+<%= link_to 'Edit', edit_project_task_path(@project.id, @task) %> |
+<%= link_to 'Back', project_tasks_path(@project.id) %>
